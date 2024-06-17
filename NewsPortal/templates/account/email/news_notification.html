@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новая новость</title>
+</head>
+<body>
+    <p>Уважаемый {{ subscriber.username }},</p>
+    <p>В категории {{ news.category.name }} опубликована новая новость:</p>
+    <h2>{{ news.title }}</h2>
+    <p>{{ news.summary }}</p>
+    <a href="{% url 'news_detail' news.pk %}">Читать далее</a>
+</body>
+</html>

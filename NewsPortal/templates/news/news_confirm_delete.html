@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}Delete News{% endblock %}
+
+{% block content %}
+  <h1>Вы уверены, что хотите удалить эту новость?</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">Да, удалить</button>
+    <a href="{% url 'news_list' %}">Закрыть</a>
+  </form>
+{% endblock %}

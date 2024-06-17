@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html' %}
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+  <h1>Search Results</h1>
+  <form method="GET">
+    {{ form.as_p }}
+    <button type="submit">Найти</button>
+  </form>
+  <ul>
+    {% for news in search_results %}
+      <li>
+        <h3>{{ news.title }}</h3>
+        <p>{{ news.created_at|date }}</p>
+               {% if news.author %}
+          <p>{{ news.author.username }}</p>
+        {% else %}
+          <p>No Author</p>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>Ничего не найдено.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
