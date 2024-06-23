@@ -1,0 +1,5 @@
+{% for news in news_list %}
+<h2>{{ news.title }}</h2>
+<p>{{ news.text|truncatewords:50 }}</p>
+<p><a href="{{ site_url }}/news/{{ news.pk }}">Читать полностью</a></p>
+{% endfor %}
